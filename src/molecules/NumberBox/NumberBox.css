@@ -1,0 +1,14 @@
+
+.numberbox {
+  display: flex;
+    flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.numberbox p {
+  margin: 0;
+}
