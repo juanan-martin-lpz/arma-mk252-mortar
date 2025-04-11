@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
+import { TableRow } from "./TableRow";
 import './Table.css'
 
-const Table = ({ data }) => {
-
+const Table = ({ dispatcher, state }) => {
 
     return (
       <table className='table'>
       <thead>
         <tr>
+          <th></th>
           <th>Altura Propia</th>
           <th>Denominacion</th>
           <th>Municion</th>
@@ -16,20 +17,12 @@ const Table = ({ data }) => {
           <th>Rumbo</th>
           <th>Elevacion</th>
           <th>Azimuth</th>
+          
         </tr>
       </thead>
       <tbody>
-        {data.map((item, index) => (
-        <tr key={index}>
-          <td>{item.alturaPropia}</td>
-          <td>{item.denominacion}</td>
-          <td>{item.municion}</td>
-          <td>{item.distancia}</td>
-          <td>{item.altura}</td>
-          <td>{item.rumbo}</td>
-          <td>{item.resultado}</td>
-          <td>{item.azimuth}</td>
-        </tr>
+        {state.misiones.map((item) => (
+          <TableRow item={item} dispatcher={dispatcher} />
         ))}
       </tbody>
       </table>
@@ -37,3 +30,9 @@ const Table = ({ data }) => {
   }
 
   export default Table;
+
+  
+            
+            
+            
+            

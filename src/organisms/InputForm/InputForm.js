@@ -16,7 +16,7 @@ const InputForm = () => {
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
   const [denominacion, setDenominacion] = useState('');
-  const [municion, setMunicion] = useState('');
+  const [municion, setMunicion] = useState('ch0');
   const [distancia, setDistancia] = useState(0);
   const [altura, setAltura] = useState(0);
   const [rumbo, setRumbo] = useState(0);
@@ -61,7 +61,7 @@ const InputForm = () => {
           <p>{ azimuth }</p>
         </div>
         <div>
-          <Table data={state.misiones} />
+          <Table  dispatcher={dispatch} state={state}/>
         </div>
       </>
     );
